@@ -1009,11 +1009,11 @@ class Muzero:
         self.action_dimension = torch.tensor(self.action_dictionnary).size(0)
         
         self.representation_function = torch.load(
-            f'{model_directory}/{init_var["random_tag"]}_muzero_representation_function.pt').to(self.device)
+            f'{model_directory}/{init_var["random_tag"]}_muzero_representation_function.pt', weights_only=False).to(self.device)
         self.dynamics_function = torch.load(
-            f'{model_directory}/{init_var["random_tag"]}_muzero_dynamics_function.pt').to(self.device)
+            f'{model_directory}/{init_var["random_tag"]}_muzero_dynamics_function.pt', weights_only=False).to(self.device)
         self.prediction_function = torch.load(
-            f'{model_directory}/{init_var["random_tag"]}_muzero_prediction_function.pt').to(self.device)
+            f'{model_directory}/{init_var["random_tag"]}_muzero_prediction_function.pt', weights_only=False).to(self.device)
         
         self.model_without_amp()
                 
