@@ -31,7 +31,6 @@ RUN mkdir /root/.mujoco && cd /root/.mujoco \
 COPY req.txt /app
 RUN pip install -r req.txt
 COPY . /app
-RUN . /mypy/bin/activate && uv pip install -e . 
 
 ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/.mujoco/bin"
 
