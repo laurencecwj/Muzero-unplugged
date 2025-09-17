@@ -3,8 +3,6 @@
 FROM nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
 # FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
 
-COPY . /app
-
 WORKDIR /app
 
 RUN apt-get -y update \
@@ -29,6 +27,8 @@ RUN wget -qO- https://astral.sh/uv/install.sh | sh \
      
 RUN mkdir /root/.mujoco && cd /root/.mujoco \
     && wget -qO- 'https://github.com/deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz' | tar -xzvf -
+
+COPY . /app
 RUN pip install -r req.txt
 
 ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/.mujoco/bin"
