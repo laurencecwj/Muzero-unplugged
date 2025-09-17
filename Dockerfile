@@ -28,7 +28,7 @@ RUN wget -qO- https://astral.sh/uv/install.sh | sh \
     && . /mypy/bin/activate && uv pip install pip
      
 RUN && mkdir /root/.mujoco && cd /root/.mujoco \
-    wget -qO- 'https://github.com/deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz' | tar -xzvf -
+    && wget -qO- 'https://github.com/deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz' | tar -xzvf -
 RUN pip install -r req.txt
 
 ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/.mujoco/bin"
