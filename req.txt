@@ -1,0 +1,23 @@
+numpy
+cloudpickle
+importlib_metadata
+dataclasses
+typing_extensions
+opencv-python
+lz4
+matplotlib
+keyboard
+box2d-py
+ale-py
+mujoco_py<2.2
+imageio
+jupyterlab
+ipywidgets
+gymnasium[all]
+gymnasium[atari]
+gymnasium[accept-rom-license]
+-f https://download.pytorch.org/whl/torch_stable.html
+torch
+-f https://download.pytorch.org/whl/torch_stable.html
+torchvision
+ray
