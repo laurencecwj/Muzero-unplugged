@@ -35,4 +35,4 @@ ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/.mujoco/bin"
 
 EXPOSE 8888
 
-ENTRYPOINT ["jupyter-lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--notebook-dir=/app", "--NotebookApp.default_url=tutorial.ipynb,README.md","--NotebookApp.terminals_enabled=True"]
+ENTRYPOINT ["/mypy/bin/jupyter-lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--notebook-dir=/app", "--NotebookApp.default_url=tutorial.ipynb,README.md","--NotebookApp.terminals_enabled=True"]
