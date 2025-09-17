@@ -1,7 +1,7 @@
 # A Dockerfile that sets up a full Gym and Pytorch
 # FROM python:3.9.16
-# FROM nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
-FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
+FROM nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
+# FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
 
 COPY . /app
 
