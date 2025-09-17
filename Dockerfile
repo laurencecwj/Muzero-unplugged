@@ -28,8 +28,10 @@ RUN wget -qO- https://astral.sh/uv/install.sh | sh \
 RUN mkdir /root/.mujoco && cd /root/.mujoco \
     && wget -qO- 'https://github.com/deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz' | tar -xzvf -
 
-COPY . /app
+COPY req.txt /app
 RUN pip install -r req.txt
+COPY . /app
+RUN pip install -e . 
 
 ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/.mujoco/bin"
 
