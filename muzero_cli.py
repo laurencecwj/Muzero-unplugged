@@ -5,6 +5,8 @@ from game import *
 from replay_buffer import *
 from muzero_model import *
 from self_play import *
+import wandb 
+from torch.utils.tensorboard import SummaryWriter
 
 def main(cli_input):
     
@@ -245,4 +247,7 @@ def main(cli_input):
 
 
 if __name__ == "__main__":
+    wandb.init(project="muzero_unplugged")
+    wandb.tensorboard.patch()
+    writer = SummaryWriter('runs')
     main(sys.argv[:])
