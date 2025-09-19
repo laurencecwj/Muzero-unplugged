@@ -289,6 +289,7 @@ def learning_cycle(number_of_iteration=10000,
         loss.append(sum(cache_loss)/len(cache_loss))
 
         prompt_feedback = f'EPOCH {ep} || selfplay reward: {reward[-1]} || training loss: { loss[-1] }||'
+        write_scales(ep, {"Train/reward": reward[-1], "Train/loss": loss[-1]})
         epoch_pr.append(prompt_feedback)
         if verbose: 
             print(" "*1000,end='\r')
