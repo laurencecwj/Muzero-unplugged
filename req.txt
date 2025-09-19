@@ -13,6 +13,8 @@ mujoco_py<2.2
 imageio
 jupyterlab
 ipywidgets
+wandb
+tensorboard
 gymnasium[all]
 gymnasium[atari]
 gymnasium[accept-rom-license]
