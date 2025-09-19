@@ -13,7 +13,7 @@ from muzero_model import *
 from replay_buffer import *
 
 import gymnasium as gym
-
+from log import write_scales
 
 ##########################################################################################################################
 
@@ -273,6 +273,7 @@ def learning_cycle(number_of_iteration=10000,
         if did_better is None: 
             print(" "*1000,end='\r')
             print("save model with : ", reward[-1]," reward")
+            write_scales(ep, {"Train/save_model_reward": reward[-1]})
         muzero_model.save_model(
             directory="model_checkpoint", 
             tag=model_tag_number, 
